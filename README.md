@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# Mini Dealer Portal UI
 
-## Project info
+A modern, responsive dealer portal built with React, TypeScript, and Tailwind CSS featuring a stunning glass morphism design with dark theme.
 
-**URL**: https://lovable.dev/projects/af8854c1-624c-46a9-a6fe-47d94e0e7da4
+## ✨ Features
 
-## How can I edit this code?
+### Core Functionality
+- **Authentication System** - Secure login with form validation
+- **Dashboard** - Comprehensive overview with analytics and quick actions  
+- **Product Catalog** - Browse, search, and filter products
+- **Shopping Cart** - Add items, manage quantities with localStorage persistence
+- **Order Management** - View order history and track status
 
-There are several ways of editing your application.
+### Design Highlights
+- **Glass Morphism UI** - Frosted glass cards with subtle transparency
+- **Dark Theme** - Professional black/gray color scheme
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+- **Smooth Animations** - Hover effects, transitions, and micro-interactions
+- **Modern Typography** - Clean, readable fonts with semantic color tokens
 
-**Use Lovable**
+### Advanced Features
+- **Real-time Cart Updates** - Live cart count in navigation
+- **Product Filtering** - Filter by category, stock status, and featured items
+- **Search Functionality** - Find products across name, description, and category
+- **Order Details Modal** - Detailed order information with item breakdown
+- **Toast Notifications** - User feedback for all actions
+- **Loading States** - Skeleton loaders and spinners
+- **Form Validation** - Client-side validation with error handling
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/af8854c1-624c-46a9-a6fe-47d94e0e7da4) and start prompting.
+## 🚀 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Shadcn/ui components
+- **State Management**: React Context API
+- **Routing**: React Router v6
+- **Data Persistence**: localStorage
+- **Icons**: Lucide React
+- **Build Tool**: Vite
 
-**Use your preferred IDE**
+## 📦 Demo Credentials
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+Email: dealer@example.com
+Password: password123
 ```
 
-**Edit a file directly in GitHub**
+## 🏗️ Architecture
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application follows a modular architecture with:
 
-**Use GitHub Codespaces**
+- **Contexts**: Authentication and Cart state management
+- **Components**: Reusable UI components with proper separation
+- **Pages**: Feature-specific page components
+- **Types**: TypeScript interfaces for type safety
+- **Design System**: Centralized styling with semantic tokens
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Design System
 
-## What technologies are used for this project?
+The design system features:
+- **Glass morphism effects** with backdrop blur
+- **Semantic color tokens** for consistent theming
+- **Custom animations** and transitions
+- **Responsive utilities** for all device sizes
+- **Dark theme optimized** color palette
 
-This project is built with:
+## 📱 Responsive Design
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Fully responsive across all devices:
+- **Desktop**: Full sidebar with expanded navigation
+- **Tablet**: Collapsible sidebar with touch-friendly controls
+- **Mobile**: Mobile-first responsive design with optimized layouts
 
-## How can I deploy this project?
+## 🔧 Key Components
 
-Simply open [Lovable](https://lovable.dev/projects/af8854c1-624c-46a9-a6fe-47d94e0e7da4) and click on Share -> Publish.
+- `ProductCard` - Reusable product display component
+- `DashboardLayout` - Main layout with sidebar navigation
+- `AuthContext` - Authentication state management
+- `CartContext` - Shopping cart functionality
+- Custom hooks for cart and product management
 
-## Can I connect a custom domain to my Lovable project?
+## 💎 Features Showcase
 
-Yes, you can!
+1. **Professional Dashboard** - Welcome section, stats cards, quick actions
+2. **Advanced Product Catalog** - Grid/list views, filtering, search
+3. **Smart Cart Management** - Quantity controls, price calculations
+4. **Order Tracking** - Status badges, detailed order views
+5. **Responsive Navigation** - Collapsible sidebar with cart count
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This dealer portal demonstrates modern React development practices with a focus on user experience, performance, and maintainability.

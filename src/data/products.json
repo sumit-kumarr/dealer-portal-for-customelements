@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Professional Helmet A",
+    "price": 299.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Safety Equipment",
+    "description": "Premium full-face helmet with advanced safety features",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Industrial Gloves Pro",
+    "price": 45.50,
+    "image": "/api/placeholder/300/300",
+    "category": "Safety Equipment",
+    "description": "Heavy-duty protective gloves for industrial use",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": 3,
+    "name": "Steel-Toe Boots",
+    "price": 189.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Footwear",
+    "description": "Durable steel-toe boots for workplace safety",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Safety Vest Hi-Vis",
+    "price": 29.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Safety Equipment",
+    "description": "High-visibility safety vest for construction sites",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Power Drill XL",
+    "price": 149.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Tools",
+    "description": "High-performance cordless drill with multiple attachments",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Adjustable Wrench Set",
+    "price": 79.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Tools",
+    "description": "Professional grade adjustable wrench set",
+    "inStock": false,
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "LED Work Light",
+    "price": 89.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Lighting",
+    "description": "Portable LED work light with adjustable brightness",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Tool Belt Premium",
+    "price": 59.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Accessories",
+    "description": "Heavy-duty leather tool belt with multiple pockets",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": 9,
+    "name": "Measuring Tape 25ft",
+    "price": 24.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Tools",
+    "description": "Professional measuring tape with magnetic tip",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "Safety Goggles Clear",
+    "price": 19.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Safety Equipment",
+    "description": "Clear safety goggles with anti-fog coating",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "Pneumatic Nail Gun",
+    "price": 399.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Tools",
+    "description": "Professional pneumatic nail gun for construction",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": 12,
+    "name": "Hard Hat Yellow",
+    "price": 34.99,
+    "image": "/api/placeholder/300/300",
+    "category": "Safety Equipment",
+    "description": "ANSI-approved hard hat with adjustable suspension",
+    "inStock": true,
+    "featured": false
+  }
+]

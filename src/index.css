@@ -2,95 +2,148 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Dealer Portal Design System - Dark Theme with Glass Morphism */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark Theme Base Colors */
+    --background: 220 20% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass Morphism Colors */
+    --glass-background: 220 20% 12%;
+    --glass-border: 220 20% 20%;
+    --glass-overlay: 0 0% 0%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Card Colors */
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Popover Colors */
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Primary Colors - Electric Blue */
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 20% 8%;
+    --primary-glow: 200 100% 60%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Secondary Colors */
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 0 0% 90%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted Colors */
+    --muted: 220 20% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Accent Colors */
+    --accent: 270 100% 70%;
+    --accent-foreground: 220 20% 8%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive Colors */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 95%;
 
-    --radius: 0.5rem;
+    /* Success Colors */
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 95%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Warning Colors */
+    --warning: 45 100% 50%;
+    --warning-foreground: 220 20% 8%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Border and Input */
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 200 100% 50%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(var(--glass-background), 0.8), 
+      hsla(var(--glass-background), 0.4)
+    );
+    --gradient-overlay: linear-gradient(135deg, 
+      hsla(var(--glass-overlay), 0.3), 
+      hsla(var(--glass-overlay), 0.1)
+    );
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Shadows */
+    --shadow-glass: 0 8px 32px hsla(var(--glass-overlay), 0.3);
+    --shadow-glow: 0 0 30px hsla(var(--primary), 0.3);
+    --shadow-card: 0 4px 16px hsla(var(--glass-overlay), 0.2);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Sidebar Colors */
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 200 100% 50%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  /* Force dark mode */
+  * {
+    @apply border-border;
+  }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsla(var(--primary), 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsla(var(--accent), 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+  /* Glass morphism utilities */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-glass-border rounded-xl;
+    background: var(--gradient-glass);
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+  .glass-card:hover {
+    @apply border-primary/20;
+    box-shadow: var(--shadow-glass), var(--shadow-glow);
+  }
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+  .glass-button {
+    @apply bg-primary/10 backdrop-blur-md border border-primary/20 text-primary hover:bg-primary/20 hover:border-primary/40 rounded-lg transition-all duration-200;
+  }
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+  .glass-input {
+    @apply bg-input/50 backdrop-blur-md border border-border/50 focus:border-primary/50 rounded-lg transition-all duration-200;
+  }
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted/70;
   }
 }
 
