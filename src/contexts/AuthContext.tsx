@@ -49,9 +49,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const userData: User = {
         id: '1',
         email: email,
-        name: 'John Smith',
+        name: 'Michael Rodriguez',
         dealerId: 'DEALER001',
-        dealerName: 'Elite Auto Parts'
+        dealerName: 'ProTools Industrial Supply'
       };
       
       setUser(userData);

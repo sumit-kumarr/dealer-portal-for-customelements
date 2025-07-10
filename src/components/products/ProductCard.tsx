@@ -6,6 +6,20 @@ import { Badge } from '@/components/ui/badge';
 import { useCart } from '@/contexts/CartContext';
 import { ShoppingCart, Star, Package } from 'lucide-react';
 
+// Import product images
+import helmetA from '@/assets/helmet-a.jpg';
+import glovesPro from '@/assets/gloves-pro.jpg';
+import steelBoots from '@/assets/steel-boots.jpg';
+import safetyVest from '@/assets/safety-vest.jpg';
+import powerDrill from '@/assets/power-drill.jpg';
+import wrenchSet from '@/assets/wrench-set.jpg';
+import ledLight from '@/assets/led-light.jpg';
+import toolBelt from '@/assets/tool-belt.jpg';
+import measuringTape from '@/assets/measuring-tape.jpg';
+import safetyGoggles from '@/assets/safety-goggles.jpg';
+import nailGun from '@/assets/nail-gun.jpg';
+import hardHat from '@/assets/hard-hat.jpg';
+
 interface ProductCardProps {
   product: Product;
 }
@@ -17,11 +31,42 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     addToCart(product);
   };
 
+  // Map image names to imported images
+  const imageMap: { [key: string]: string } = {
+    'helmet-a': helmetA,
+    'gloves-pro': glovesPro,
+    'steel-boots': steelBoots,
+    'safety-vest': safetyVest,
+    'power-drill': powerDrill,
+    'wrench-set': wrenchSet,
+    'led-light': ledLight,
+    'tool-belt': toolBelt,
+    'measuring-tape': measuringTape,
+    'safety-goggles': safetyGoggles,
+    'nail-gun': nailGun,
+    'hard-hat': hardHat,
+  };
+
+  const productImage = imageMap[product.image] || imageMap['helmet-a'];
+
   return (
     <Card className="glass-card group hover:shadow-glow transition-all duration-300 overflow-hidden">
       <div className="relative">
-        <div className="aspect-square bg-muted/20 p-4 flex items-center justify-center">
-          <Package className="h-16 w-16 text-muted-foreground" />
+        <div className="aspect-square bg-muted/20 p-4 flex items-center justify-center overflow-hidden">
+          <img 
+            src={productImage} 
+            alt={product.name}
+            className="w-full h-full object-cover rounded-lg"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div className="hidden items-center justify-center w-full h-full">
+            <Package className="h-16 w-16 text-muted-foreground" />
+          </div>
         </div>
         
         {product.featured && (
