@@ -1,6 +1,43 @@
-# Mini Dealer Portal UI
+# Mini Dealer Portal UI : 
+
+## 🚀 Getting Started
+
+To run this project locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/dealer-portal-for-customelements.git
+   cd dealer-portal-for-customelements
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Login using demo credentials:**
+   - **Email:** `custom@example.com`
+   - **Password:** `password123`
+
+---
+
+## 🖼️ Project Preview
+
+<img src="/dealer-portal-for-customelements/src/assets/image.png" alt="Dealer Portal Dashboard Preview" width="800" />
+
 
 A modern, responsive dealer portal built with React, TypeScript, and Tailwind CSS featuring a stunning glass morphism design with dark theme.
+
+
 
 ## ✨ Features
 
@@ -41,7 +78,7 @@ A modern, responsive dealer portal built with React, TypeScript, and Tailwind CS
 ## 📦 Demo Credentials
 
 ```
-Email: dealer@example.com
+Email: custom@example.com
 Password: password123
 ```
 
@@ -88,3 +125,7 @@ Fully responsive across all devices:
 5. **Responsive Navigation** - Collapsible sidebar with cart count
 
 This dealer portal demonstrates modern React development practices with a focus on user experience, performance, and maintainability.
+
+
+
+//Made By Sumit

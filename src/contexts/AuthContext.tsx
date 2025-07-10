@@ -45,11 +45,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Simple validation - in real app, this would be API call
-    if (email === 'dealer@example.com' && password === 'password123') {
+    if (email === 'custom@example.com' && password === 'password123') {
       const userData: User = {
         id: '1',
         email: email,
-        name: 'Michael Rodriguez',
+        name: 'Custom Elements',
         dealerId: 'DEALER001',
         dealerName: 'ProTools Industrial Supply'
       };

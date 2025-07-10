@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
 import { Eye, EyeOff, Lock, Mail, ShoppingBag } from 'lucide-react';
+import { url } from 'inspector';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,7 @@ const LoginPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const { login, isLoading } = useAuth();
+
 
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {};
@@ -43,19 +45,22 @@ const LoginPage: React.FC = () => {
     if (!success) {
       toast({
         title: "Login Failed",
-        description: "Invalid email or password. Try dealer@example.com / password123",
+        description: "Invalid email or password. Try custom@example.com / password123",
         variant: "destructive",
       });
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card" />
+    <div
+      className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center"
+      style={{ backgroundImage: "url('/image.png')", background:"cover"}}
+    >
+      <div className="absolute" />
       
-      <Card className="glass-card w-full max-w-md relative z-10 border-glass-border">
+      <Card className="glass-card w-full max-w-md relative z-10 border-glass-border bg-transparent backdrop-blur-lg border border-red-500 ">
         <CardHeader className="text-center space-y-4">
-          <div className="mx-auto p-3 bg-primary/10 rounded-full w-fit">
+          <div className="mx-auto p-3  rounded-full w-fit">
             <ShoppingBag className="h-8 w-8 text-primary" />
           </div>
           <CardTitle className="text-2xl font-bold text-gradient">
@@ -67,7 +72,7 @@ const LoginPage: React.FC = () => {
         </CardHeader>
         
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
@@ -125,7 +130,7 @@ const LoginPage: React.FC = () => {
               Demo credentials:
             </p>
             <p className="text-sm text-center mt-1">
-              <span className="font-medium">Email:</span> dealer@example.com
+              <span className="font-medium">Email:</span> custom@example.com
             </p>
             <p className="text-sm text-center">
               <span className="font-medium">Password:</span> password123
