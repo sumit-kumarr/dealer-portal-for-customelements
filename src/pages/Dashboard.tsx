@@ -44,19 +44,19 @@ const Dashboard: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="glass-card p-6 animate-fade-in">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gradient">
+      <div className="glass-card p-4 md:p-6 animate-fade-in">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="min-w-0">
+            <h1 className="text-2xl md:text-3xl font-bold text-gradient truncate">
               Welcome back, {user?.name}!
             </h1>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm md:text-base">
               {user?.dealerName} • Dealer ID: {user?.dealerId}
             </p>
           </div>
-          <div className="text-right">
+          <div className="text-left sm:text-right">
             <p className="text-sm text-muted-foreground">Today</p>
-            <p className="text-2xl font-bold">
+            <p className="text-xl md:text-2xl font-bold">
               {new Date().toLocaleDateString('en-US', { 
                 weekday: 'long',
                 month: 'short',
@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         <Card className="glass-card hover:shadow-glow transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Total Orders</CardTitle>
@@ -134,7 +134,7 @@ const Dashboard: React.FC = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
             {quickActions.map((action, index) => (
               <Button
                 key={index}
@@ -173,21 +173,21 @@ const Dashboard: React.FC = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {recentOrders.map((order) => (
-              <div key={order.id} className="flex items-center justify-between p-4 bg-muted/20 rounded-lg">
-                <div className="flex items-center gap-4">
+              <div key={order.id} className="flex items-center justify-between p-3 md:p-4 bg-muted/20 rounded-lg">
+                <div className="flex items-center gap-3 md:gap-4 min-w-0 flex-1">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <FileText className="h-4 w-4 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-medium">{order.id}</p>
-                    <p className="text-sm text-muted-foreground">{order.date}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-medium text-sm md:text-base truncate">{order.id}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">{order.date}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <p className="font-medium">${order.total.toFixed(2)}</p>
-                  <Badge 
+                <div className="flex items-center gap-2 md:gap-4 ml-2">
+                  <p className="font-medium text-sm md:text-base">${order.total.toFixed(2)}</p>
+                  <Badge
                     variant={order.status === 'Delivered' ? 'default' : 'secondary'}
                     className={order.status === 'Delivered' ? 'bg-success' : ''}
                   >

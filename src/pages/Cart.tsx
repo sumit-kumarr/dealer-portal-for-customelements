@@ -55,14 +55,14 @@ const Cart: React.FC = () => {
   const total = subtotal + shipping + tax;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 md:space-y-6">
       {/* Header */}
-      <div className="glass-card p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gradient">Shopping Cart</h1>
-            <p className="text-muted-foreground">
-              {items.length} {items.length === 1 ? 'item' : 'items'} in your cart
+      <div className="glass-card p-4 md:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="min-w-0">
+            <h1 className="text-2xl md:text-3xl font-bold text-gradient">Shopping Cart</h1>
+            <p className="text-muted-foreground text-sm md:text-base">
+              {items.length > 0 ? `${items.length} item${items.length !== 1 ? 's' : ''} in your cart` : 'Your cart is empty'}
             </p>
           </div>
           {items.length > 0 && (
@@ -96,28 +96,29 @@ const Cart: React.FC = () => {
           </CardContent>
         </Card>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6">
           {/* Cart Items */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="xl:col-span-2 space-y-3 md:space-y-4">
             {items.map((item) => (
               <Card key={item.product.id} className="glass-card">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-muted/20 rounded-lg flex items-center justify-center">
-                      <Package className="h-8 w-8 text-muted-foreground" />
+                <CardContent className="p-3 md:p-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-muted/20 rounded-lg flex items-center justify-center">
+                      <Package className="h-6 w-6 md:h-8 md:w-8 text-muted-foreground" />
                     </div>
                     
-                    <div className="flex-1">
-                      <h3 className="font-semibold">{item.product.name}</h3>
-                      <p className="text-sm text-muted-foreground">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm md:text-base truncate">{item.product.name}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">
                         {item.product.category}
                       </p>
-                      <Badge variant="secondary" className="mt-1">
+                      <Badge variant="secondary" className="mt-1 text-xs">
                         ${item.product.price.toFixed(2)} each
                       </Badge>
                     </div>
                     
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                      <div className="flex items-center gap-2">
                       <Button
                         variant="outline"
                         size="icon"
@@ -131,7 +132,7 @@ const Cart: React.FC = () => {
                         type="number"
                         value={item.quantity}
                         onChange={(e) => handleQuantityChange(item.product.id, parseInt(e.target.value) || 1)}
-                        className="w-16 text-center glass-input"
+                        className="w-12 md:w-16 text-center glass-input text-sm"
                         min="1"
                       />
                       
@@ -143,20 +144,21 @@ const Cart: React.FC = () => {
                       >
                         <Plus className="h-4 w-4" />
                       </Button>
-                    </div>
-                    
-                    <div className="text-right">
-                      <p className="font-semibold">
-                        ${(item.product.price * item.quantity).toFixed(2)}
-                      </p>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => removeFromCart(item.product.id)}
-                        className="text-destructive hover:text-destructive mt-1"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
+                      </div>
+                      
+                      <div className="text-left sm:text-right">
+                        <p className="font-semibold text-sm md:text-base">
+                          ${(item.product.price * item.quantity).toFixed(2)}
+                        </p>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => removeFromCart(item.product.id)}
+                          className="text-destructive hover:text-destructive mt-1 p-1"
+                        >
+                          <Trash2 className="h-3 w-3 md:h-4 md:w-4" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -165,8 +167,8 @@ const Cart: React.FC = () => {
           </div>
 
           {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <Card className="glass-card sticky top-6">
+          <div className="xl:col-span-1">
+            <Card className="glass-card sticky top-4 md:top-6">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CreditCard className="h-5 w-5" />
