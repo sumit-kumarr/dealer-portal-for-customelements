@@ -6,7 +6,7 @@ To run this project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/dealer-portal-for-customelements.git
+   git clone https://github.com/sumit-kumarr/dealer-portal-for-customelements.git
    cd dealer-portal-for-customelements
    ```
 
@@ -32,7 +32,7 @@ To run this project locally:
 
 ## 🖼️ Project Preview
 
-<img src="/dealer-portal-for-customelements/src/assets/image.png" alt="Dealer Portal Dashboard Preview" width="800" />
+<img src="/src/assets/image.png" alt="Dealer Portal Dashboard Preview" width="800" />
 
 
 A modern, responsive dealer portal built with React, TypeScript, and Tailwind CSS featuring a stunning glass morphism design with dark theme.
@@ -128,4 +128,4 @@ This dealer portal demonstrates modern React development practices with a focus 
 
 
 
-//Made By Sumit
+Made By Sumit

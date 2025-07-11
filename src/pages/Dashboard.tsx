@@ -30,9 +30,9 @@ const Dashboard: React.FC = () => {
   };
 
   const recentOrders = [
-    { id: 'ORD-2024-001', date: '2024-01-15', total: 789.97, status: 'Delivered' },
-    { id: 'ORD-2024-002', date: '2024-01-10', total: 329.97, status: 'Processing' },
-    { id: 'ORD-2024-003', date: '2024-01-05', total: 317.47, status: 'Shipped' },
+    { name : "Professtional Helmet A",id: 'ORD-2025-001', date: '2025-01-15', total: 789.97, status: 'Delivered' },
+    { name : "Steel-Toe Boots",id: 'ORD-2025-002', date: '2025-01-10', total: 329.97, status: 'Processing' },
+    { name : "Power Drill XL", id: 'ORD-2025-003', date: '2025-01-05', total: 317.47, status: 'Shipped' },
   ];
 
   const quickActions = [
@@ -181,7 +181,7 @@ const Dashboard: React.FC = () => {
                     <FileText className="h-4 w-4 text-primary" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="font-medium text-sm md:text-base truncate">{order.id}</p>
+                    <p className="font-medium text-sm md:text-base truncate">{order.name}</p>
                     <p className="text-xs md:text-sm text-muted-foreground">{order.date}</p>
                   </div>
                 </div>
